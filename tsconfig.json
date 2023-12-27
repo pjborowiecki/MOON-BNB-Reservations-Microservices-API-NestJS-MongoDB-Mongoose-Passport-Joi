@@ -21,7 +21,9 @@
       "@app/shared": ["libs/shared/src"],
       "@app/shared/*": ["libs/shared/src/*"],
       "@app/reservations": ["apps/reservations/src"],
-      "@app/reservations/*": ["apps/reservations/src/*"]
+      "@app/reservations/*": ["apps/reservations/src/*"],
+      "@app/auth": ["apps/auth/src"],
+      "@app/auth/*": ["apps/auth/src/*"]
     }
   }
 }
