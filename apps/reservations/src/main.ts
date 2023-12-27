@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 
-import { ReservationsModule } from 'apps/reservations/src/reservations.module';
+import { ReservationsModule } from '@app/reservations/reservations.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(ReservationsModule);
