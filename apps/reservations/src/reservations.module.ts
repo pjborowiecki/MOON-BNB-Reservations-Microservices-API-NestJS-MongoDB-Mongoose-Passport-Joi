@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import * as Joi from 'joi';
 
 import { ReservationsService } from '@app/reservations/reservations.service';
 import { ReservationsController } from '@app/reservations/reservations.controller';
@@ -13,6 +15,13 @@ import {
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      validationSchema: Joi.object({
+        PORT: Joi.number().required(),
+        DATABASE_URI: Joi.string().required(),
+      }),
+    }),
     LoggerModule,
     DatabaseModule,
     DatabaseModule.forFeature([
