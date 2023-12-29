@@ -1,6 +1,5 @@
 import {
   IsDate,
-  IsString,
   IsNotEmpty,
   IsDefined,
   IsNotEmptyObject,
@@ -26,12 +25,4 @@ export class CreateReservationDto {
   @ValidateNested()
   @Type(() => CreateChargeDto)
   charge: CreateChargeDto;
-
-  @IsString()
-  @IsNotEmpty()
-  propertyId: string;
-
-  @IsString()
-  @IsNotEmpty()
-  invoiceId: string;
 }
