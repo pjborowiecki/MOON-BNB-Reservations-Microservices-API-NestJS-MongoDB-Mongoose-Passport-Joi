@@ -4,6 +4,8 @@ import { JwtModule } from '@nestjs/jwt';
 import * as Joi from 'joi';
 
 import { AuthController } from '@app/auth/auth.controller';
+import { LocalStrategy } from '@app/auth/strategies/local.strategy';
+import { JwtStrategy } from '@app/auth/strategies/jwt.strategy';
 import { AuthService } from '@app/auth//auth.service';
 import { UsersModule } from '@app/auth/users/users.module';
 
@@ -33,6 +35,6 @@ import { LoggerModule } from '@app/shared/logger/logger.module';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, LocalStrategy, JwtStrategy],
 })
 export class AuthModule {}
