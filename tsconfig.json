@@ -23,7 +23,9 @@
       "@app/reservations": ["apps/reservations/src"],
       "@app/reservations/*": ["apps/reservations/src/*"],
       "@app/auth": ["apps/auth/src"],
-      "@app/auth/*": ["apps/auth/src/*"]
+      "@app/auth/*": ["apps/auth/src/*"],
+      "@app/payments": ["apps/payments/src"],
+      "@app/payments/*": ["apps/payments/src/*"]
     }
   }
 }
