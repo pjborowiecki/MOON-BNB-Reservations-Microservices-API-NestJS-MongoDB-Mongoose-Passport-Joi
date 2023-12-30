@@ -18,30 +18,16 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/shared": [
-        "libs/shared/src"
-      ],
-      "@app/shared/*": [
-        "libs/shared/src/*"
-      ],
-      "@app/reservations": [
-        "apps/reservations/src"
-      ],
-      "@app/reservations/*": [
-        "apps/reservations/src/*"
-      ],
-      "@app/auth": [
-        "apps/auth/src"
-      ],
-      "@app/auth/*": [
-        "apps/auth/src/*"
-      ],
-      "@app/payments": [
-        "apps/payments/src"
-      ],
-      "@app/payments/*": [
-        "apps/payments/src/*"
-      ]
+      "@app/shared": ["libs/shared/src"],
+      "@app/shared/*": ["libs/shared/src/*"],
+      "@app/reservations": ["apps/reservations/src"],
+      "@app/reservations/*": ["apps/reservations/src/*"],
+      "@app/auth": ["apps/auth/src"],
+      "@app/auth/*": ["apps/auth/src/*"],
+      "@app/payments": ["apps/payments/src"],
+      "@app/payments/*": ["apps/payments/src/*"],
+      "@app/notifications": ["apps/notifications/src"],
+      "@app/notifications/*": ["apps/notifications/src/*"]
     }
   }
 }
