@@ -36,7 +36,7 @@ services:
     command: pnpm run start:dev payments
     env_file:
       - ./apps/payments/.env
-    volumnes:
+    volumes:
       - .:/usr/src/apps
 
   notifications:
@@ -47,5 +47,5 @@ services:
     command: pnpm run start:dev notifications
     env_file:
       - ./apps/notifications/.env
-    volumnes:
+    volumes:
       - .:/usr/src/apps
