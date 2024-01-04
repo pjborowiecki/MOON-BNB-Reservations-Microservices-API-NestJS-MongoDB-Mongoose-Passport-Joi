@@ -1,0 +1,62 @@
+steps:
+  # Reservations service
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'europe-west3-docker.pkg.dev/moonbnb/reservations/production',
+        '-f',
+        'apps/reservations/Dockerfile',
+        '.',
+      ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'europe-west3-docker.pkg.dev/moonbnb/reservations/production']
+
+  # Auth service
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'europe-west3-docker.pkg.dev/moonbnb/auth/production',
+        '-f',
+        'apps/auth/Dockerfile',
+        '.',
+      ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'europe-west3-docker.pkg.dev/moonbnb/auth/production']
+
+  # Notifications service
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'europe-west3-docker.pkg.dev/moonbnb/notifications/production',
+        '-f',
+        'apps/notifications/Dockerfile',
+        '.',
+      ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'europe-west3-docker.pkg.dev/moonbnb/notifications/production']
+
+  # Payments service
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'europe-west3-docker.pkg.dev/moonbnb/payments/production',
+        '-f',
+        'apps/payments/Dockerfile',
+        '.',
+      ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'europe-west3-docker.pkg.dev/moonbnb/payments/production']

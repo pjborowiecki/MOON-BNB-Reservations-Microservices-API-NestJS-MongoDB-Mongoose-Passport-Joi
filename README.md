@@ -1,5 +1,7 @@
 # MOON BNB
 
+**Work in progress. Please check back soon**
+
 Tired of the same old Earth vacations? Ready for a celestial adventure that's out of this world? Look no further than MoonBnB, the first and only vacation rental service on the Moon!
 
 #### 🚀 Space-Age Stays
@@ -36,3 +38,5 @@ MoonBnB isn't just a vacation; it's a celestial escape that's truly out of this 
 - `docker build -t reservations -f ./Dockerfile ../../`
 - `docker tag reservations ${gcloud_repo_url}/production`
 - `docker image push ${gcloud_repo_url}/production`
+
+- `docker-compose up --build`

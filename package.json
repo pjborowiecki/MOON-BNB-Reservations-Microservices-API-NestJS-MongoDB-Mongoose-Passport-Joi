@@ -1,6 +1,6 @@
 {
   "name": "moon_bnb_reservations_microservices_nestjs_stripe",
-  "description": "MoonBnB - Earth's AirBnB equivalent, operating solely on the Moon. The first and only vacation rental service outside the Earth!",
+  "description": "MoonBnB - Earth's AirBnB equivalent, operating solely on the Moon. The first and only vacation rental service outside the Earth",
   "version": "0.0.1",
   "author": "Piotr Borowiecki",
   "private": true,
