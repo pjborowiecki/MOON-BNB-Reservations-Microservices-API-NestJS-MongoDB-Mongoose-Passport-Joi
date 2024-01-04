@@ -1,9 +1,10 @@
 import { Controller, Body, Post, Get, UseGuards } from '@nestjs/common';
 
-import { UsersService } from '@app/auth/users/users.service';
-import { UserDocument } from '@app/auth/users/entities/user.entity';
-import { CreateUserDto } from '@app/auth/users/dto/create-user.dto';
+import { UserDocument } from '@app/shared/entities/user.entity';
 import { CurrentUser } from '@app/shared/decorators/current-user.decorator';
+
+import { UsersService } from '@app/auth/users/users.service';
+import { CreateUserDto } from '@app/auth/users/dto/create-user.dto';
 
 @Controller('users')
 export class UsersController {

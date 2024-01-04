@@ -32,3 +32,7 @@ MoonBnB isn't just a vacation; it's a celestial escape that's truly out of this 
 - `docker-compose up`
 - `docker-compose down`
 - `docker run moonbnb_reservations`
+
+- `docker build -t reservations -f ./Dockerfile ../../`
+- `docker tag reservations ${gcloud_repo_url}/production`
+- `docker image push ${gcloud_repo_url}/production`
