@@ -39,7 +39,7 @@ MoonBnB isn't just a vacation; it's a celestial escape that's truly out of this 
 - `docker tag reservations ${gcloud_repo_url}/production`
 - `docker image push ${gcloud_repo_url}/production`
 
-- `docker-compose u p --build`
+- `docker-compose up --build`
 
 - `kubectl get namespaces`
 - `kubectl get pods`
@@ -73,3 +73,9 @@ MoonBnB isn't just a vacation; it's a celestial escape that's truly out of this 
 
 - `kubectl create service clusterip notifications --tcp=3000 --dry-run=client -o yaml > service.yaml`
 - `kubectl get svc`
+
+<!-- Refreshing Google OAUth tokens for testing (OAuth Playground) -->
+
+- `echo -n "${NEW_REFRESH_TOKEN}" | base64`
+- `kubectl edit secret google` (replace the value)
+- `kubectl rollout restart deployment notifications`
