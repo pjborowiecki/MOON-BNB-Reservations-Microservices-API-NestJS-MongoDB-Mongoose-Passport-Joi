@@ -7,7 +7,7 @@ import { TokenPayload } from '@app/auth/interfaces/token-payload.interface';
 import { UsersService } from '@app/auth/users/users.service';
 
 @Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
+export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
     configService: ConfigService,
     private readonly usersService: UsersService,
@@ -15,7 +15,9 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
     super({
       jwtFromRequest: ExtractJwt.fromExtractors([
         (request: any) =>
-          request?.cookies?.Authentication || request?.Authentication,
+          request?.cookies?.Authentication ||
+          request?.Authentication ||
+          request?.headers.Authentication,
       ]),
       secretOrKey: configService.get('JWT_SECRET'),
     });

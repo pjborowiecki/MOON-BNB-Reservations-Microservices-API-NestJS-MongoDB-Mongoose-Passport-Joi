@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: notifications
+  name: notifications
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notifications
+  template:
+    metadata:
+      labels:
+        app: notifications
+    spec:
+      containers:
+        - image: europe-west3-docker.pkg.dev/moonbnb/notifications/production
+          name: notifications
+          env:
+            - name: PORT
+              value: '3000'
+            - name: GOOGLE_OAUTH_CLIENT_ID
+              value: 998721359629-u58c5mrj3ig6lbh2m1q1pourab6531gd.apps.googleusercontent.com
+            - name: GOOGLE_OAUTH_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: clientSecret
+            - name: GOOGLE_OAUTH_REFRESH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: refreshToken
+            - name: SMTP_USER
+              valueFrom:
+                secretKeyRef:
+                  name: google
+                  key: smtpUser
+
+          ports:
+            - containerPort: 3000

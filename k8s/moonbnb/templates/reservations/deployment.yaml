@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: reservations
+  name: reservations
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reservations
+  template:
+    metadata:
+      labels:
+        app: reservations
+    spec:
+      containers:
+        - image: europe-west3-docker.pkg.dev/moonbnb/reservations/production
+          name: reservations
+          env:
+            - name: DATABASE_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: connectionString
