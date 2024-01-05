@@ -5,6 +5,7 @@ import * as Joi from 'joi';
 
 import { LoggerModule } from '@app/shared/logger/logger.module';
 import { DatabaseModule } from '@app/shared/database/database.module';
+import { HealthModule } from '@app/shared/health/health.module';
 import { AUTH_SERVICE, PAYMENTS_SERVICE } from '@app/shared/constants/services';
 
 import { ReservationsService } from '@app/reservations/reservations.service';
@@ -57,6 +58,7 @@ import {
         inject: [ConfigService],
       },
     ]),
+    HealthModule,
   ],
   controllers: [ReservationsController],
   providers: [ReservationsService, ReservationsRepository],
