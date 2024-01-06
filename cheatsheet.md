@@ -93,3 +93,19 @@
 
 - `eksctl get nodegroups --cluster moonbnb`
 - `eksctl scale nodegroup ng-1`
+
+- `eksctl utils associate-iam-oidc-provider --region eu-west-1 --cluster moonbnb --approve`
+- `curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.6.1/docs/install/iam_policy.json`
+
+- `eksctl create iamserviceaccount --cluster=<cluster-name> --namespace=kube-system --name=aws-load-balancer-controller --attach-policy-arn=arn:aws:iam::<AWS_ACCOUNT_ID>:policy/AWSLoadBalancerControllerIAMPolicy --override-existing-serviceaccounts --region <region-code> --approve`
+
+- `helm repo add eks https://aws.github.io/eks-charts`
+- `wget https://raw.githubusercontent.com/aws/eks-charts/master/stable/aws-load-balancer-controller/crds/crds.yaml`
+- `kubectl apply -f crds.yaml`
+
+- `helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=<cluster-name> --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller`
+
+- `kubectl get pods -n kube-system`
+
+- `helm upgrade moonbnb .`
+- `kubectl get ing`
