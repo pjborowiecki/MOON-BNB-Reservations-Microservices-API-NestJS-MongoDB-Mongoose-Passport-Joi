@@ -67,3 +67,10 @@
 - `kubect create -f stripe.yaml`
 
 - `kubectl get ing`
+
+<!-- AWS example -->
+
+- `aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 828023602172.dkr.ecr.eu-central-1.amazonaws.com`
+- `docker build -t reservations -f ./Dockerfile ../../`
+- `docker tag reservations:latest 828023602172.dkr.ecr.eu-central-1.amazonaws.com/reservations:latest`
+- `docker push 828023602172.dkr.ecr.eu-central-1.amazonaws.com/reservations:latest`
