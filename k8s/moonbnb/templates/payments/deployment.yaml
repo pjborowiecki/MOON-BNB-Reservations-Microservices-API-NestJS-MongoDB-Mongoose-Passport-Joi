@@ -15,7 +15,7 @@ spec:
         app: payments
     spec:
       containers:
-        - image: europe-west3-docker.pkg.dev/moonbnb/payments/production
+        - image: 828023602172.dkr.ecr.eu-central-1.amazonaws.com/payments:latest
           name: payments
           env:
             - name: PORT

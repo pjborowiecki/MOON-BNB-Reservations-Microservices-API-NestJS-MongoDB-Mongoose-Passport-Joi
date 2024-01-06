@@ -74,3 +74,22 @@
 - `docker build -t reservations -f ./Dockerfile ../../`
 - `docker tag reservations:latest 828023602172.dkr.ecr.eu-central-1.amazonaws.com/reservations:latest`
 - `docker push 828023602172.dkr.ecr.eu-central-1.amazonaws.com/reservations:latest`
+
+- `eksctl get clusters`
+- `eksctl create cluster -f ./cluster.yaml`
+
+- `kubectl get nodes`
+- `eksctl get nodegroups --cluster moonbnb`
+
+- `kubectl config use-context docker-desktop`
+- `kubectl get secrets`
+- `kubectl get secrets -o yaml > secret.yaml`
+- `kubectl config get-contexts`
+- `kubectl config use-context ${AWS_EKS_CONTEXT_NAME}`
+- `kubectl create -f ./secret.yaml`
+
+- `helm install moonbnb .` / `helm upgrade moonbnb .`
+- `kubectl get pods`
+
+- `eksctl get nodegroups --cluster moonbnb`
+- `eksctl scale nodegroup ng-1`
